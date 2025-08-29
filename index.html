@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio • Hii I'm Pugazh</title>
+  <meta name="description" content="Personal portfolio front page" />
+  <style>
+    /* ====== Base / Reset ====== */
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0b0f17;
+      --bg-soft: #101826;
+      --text: #e6edf3;
+      --muted: #9fb0c3;
+      --accent: #7c6cff;
+      --accent-2: #19c5ff;
+      --card: #0f1420;
+      --ring: 0 0 0 3px rgba(124,108,255,.35);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f9fc; --bg-soft: #eef3fb; --text: #0f172a; --muted: #475569;
+        --accent: #5848ff; --accent-2: #007ea7; --card: #ffffff;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 85% -20%, rgba(124,108,255,.35), transparent 60%),
+                  radial-gradient(1000px 700px at -10% 20%, rgba(25,197,255,.35), transparent 60%),
+                  var(--bg);
+    }/* ====== Layout ====== */
+.container { max-width: 1040px; margin: 0 auto; padding: 24px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { font-weight: 800; letter-spacing: .3px; }
+.brand a { color: inherit; text-decoration: none; }
+nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-weight: 600; }
+nav a:hover, nav a:focus { color: var(--text); }
+
+/* ====== Hero ====== */
+.hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; margin-top: 32px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.12); color: var(--muted); padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.04); }
+.title { font-size: clamp(28px, 5vw, 48px); line-height: 1.15; margin: 12px 0 8px; font-weight: 900; letter-spacing: .2px; }
+.title .name { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.subtitle { color: var(--muted); font-size: clamp(14px, 2.3vw, 18px); max-width: 58ch; }
+
+.cta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+.btn { border: 0; padding: 12px 18px; border-radius: 999px; font-weight: 700; cursor: pointer; transition: transform .08s ease, box-shadow .2s ease; }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: white; box-shadow: var(--shadow); }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.2); }
+
+.card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); backdrop-filter: blur(10px); box-shadow: var(--shadow); }
+
+/* ====== Photo ====== */
+.photo-wrap { position: relative; }
+.photo { width: min(320px, 100%); aspect-ratio: 1 / 1; border-radius: 24px; object-fit: cover; display: block; border: 6px solid rgba(255,255,255,.08); }
+.ring { position: absolute; inset: -12px; border-radius: 30px; pointer-events: none; box-shadow: var(--ring); }
+
+/* ====== About Section ====== */
+section { margin-top: 48px; }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.about p { margin: 0; color: var(--muted); }
+.about .card { padding: 20px; }
+
+/* ====== Footer ====== */
+footer { margin: 56px 0 12px; color: var(--muted); font-size: 14px; text-align: center; }
+
+/* ====== Responsive ====== */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  header { flex-wrap: wrap; }
+  nav { width: 100%; display: flex; justify-content: flex-end; }
+  .photo-wrap { order: -1; }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main" style="position:absolute;left:-999px;">Skip to content</a>
+  <div class="container">
+    <header>
+      <div class="brand"><a href="#">My portfolio</a></div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header><main id="main">
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div>
+      <span class="badge" aria-hidden="true">👋 Portfolio</span>
+      <h1 class="title">Hii, I'm <span class="name">Pugazhenthi</span></h1>
+      <p class="subtitle">I build clean, fast, and accessible web experiences. This is my minimal one-page portfolio — replace this text with a short intro (what you do, what you love, and what you’re looking for).</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact">Contact Me</a>
+        <a class="btn btn-ghost" href="./Your_Name_CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+
+    <div class="photo-wrap">
+      <!-- Replace src with your image path -->
+      <img class="photo card" src="/img/WhatsApp Image 2025-08-28 at 11.36.53 AM.jpeg" alt="Portrait of Your Name" loading="lazy" />
+      <div class="ring" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="about">
+    <div class="card">
+      <h2 style="margin-top:0">About Me</h2>
+      <p>
+        I'm a <strong>Front-End Developer</strong> based in <em>City, Country</em>. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you’ll find me exploring new cafes or sketching UI ideas.
+      </p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Quick Facts</h3>
+      <ul>
+        <li>💼 Currently open to freelance/remote roles</li>
+        <li>🛠️ Tools: HTML, CSS, JavaScript, React</li>
+        <li>✨ Focus: Performance, UX, Accessibility</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Work (optional placeholder) ===== -->
+  <section id="work">
+    <div class="card" style="padding:20px">
+      <h2 style="margin-top:0">Selected Work</h2>
+      <p class="subtitle">Add cards or links to 2–3 projects here. Keep it short and visual.</p>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="card" style="padding:20px">
+      <h2 style="margin-top:0">Contact</h2>
+      <p class="subtitle">Email: <a href="mailto:">pugazhenthi27112005@gmail.com.com</a> · LinkedIn · GitHub</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="yr"></span> Your Name. All rights reserved.
+</footer>
+
+  </div>  <script>
+    // Auto-year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Smooth anchor scrolling (accessible)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          const el = document.querySelector(id);
+          el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>  <!--
+    HOW TO USE
+    1) Replace "Your Name", email, and social links.
+    2) Replace the image src with your own photo (local path or URL).
+    3) Put your PDF resume in the same folder and rename the link.
+    4) Add your projects in the Work section.
+  --></body>
+</html>
